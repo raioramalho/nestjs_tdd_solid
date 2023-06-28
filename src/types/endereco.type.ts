@@ -1,4 +1,4 @@
-export  type IEndereco = {
+export type IEndereco = {
   CODEND?: number;
   CEP: string;
   ENDERECO?: string;

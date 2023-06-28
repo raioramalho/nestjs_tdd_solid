@@ -5,7 +5,7 @@ export default class HashService {
   private hash: string;
 
   public gerarHash(VALUE: string): string {
-    let hash = hashSync(VALUE);
+    const hash = hashSync(VALUE);
     return hash;
   }
 
