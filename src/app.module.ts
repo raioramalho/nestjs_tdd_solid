@@ -9,10 +9,7 @@ import CepService from './services/cep.service';
 import HashService from './services/hash.service';
 
 @Module({
-  imports: [
-        UsuarioModule, 
-        PessoaModule, 
-        EnderecoModule, ],
+  imports: [UsuarioModule, PessoaModule, EnderecoModule],
   controllers: [AppController],
   providers: [AppService, CepService, HashService],
 })

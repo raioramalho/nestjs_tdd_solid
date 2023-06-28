@@ -10,7 +10,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model USUARIO {
+model Usuario {
   CODUSU Int @id @default(autoincrement())
   EMAIL String @unique
   SENHA String
@@ -22,14 +22,14 @@ model USUARIO {
   @@map("USUARIO")
 }
 
-model PESSOA {
+model Pessoa {
   CODPES Int @id @default(autoincrement())
   NOME String
   SOBRENOME String
   CPF String @unique
   TELEFONE String
 
-  ENDERECO ENDERECO @relation(fields: [CODEND], references: [CODEND])
+  ENDERECO Endereco @relation(fields: [CODEND], references: [CODEND])
   CODEND Int @unique
 
   INCLUSAO DateTime @default(now())
@@ -38,7 +38,7 @@ model PESSOA {
   @@map("PESSOA")
 }
 
-model ENDERECO {
+model Endereco {
   CODEND Int @id @default(autoincrement())
   CEP String
   ENDERECO String
@@ -48,7 +48,7 @@ model ENDERECO {
   ESTADO String
   COMPLEMENTO String
 
-  PESSOA PESSOA[]
+  PESSOA Pessoa[]
 
   INCLUSAO DateTime @default(now())
   ALTERACAO DateTime @updatedAt

@@ -3,9 +3,8 @@ import { EnderecoService } from './endereco.service';
 import { Module } from '@nestjs/common';
 
 @Module({
-    imports: [],
-    controllers: [EnderecoController],
-    providers: [
-        EnderecoService, ],
+  imports: [],
+  controllers: [EnderecoController],
+  providers: [EnderecoService],
 })
 export class EnderecoModule {}
