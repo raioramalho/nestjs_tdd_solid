@@ -9,7 +9,7 @@ export class UsuarioController {
     constructor(private readonly usuarioService: UsuarioService) {}
 
     @Post()
-    cadastra(@Body() data: CadastraUsuarioDto): Promise<Usuario> {
+    cadastra(@Body() data: CadastraUsuarioDto): Promise<any> {
         return this.usuarioService.cadastra(data);
     }
 }

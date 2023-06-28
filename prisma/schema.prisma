@@ -14,7 +14,7 @@ model Usuario {
   CODUSU Int @id @default(autoincrement())
   EMAIL String @unique
   SENHA String
-  LOGADO Boolean  
+  LOGADO Boolean? 
 
   INCLUSAO DateTime @default(now())
   ALTERACAO DateTime @updatedAt

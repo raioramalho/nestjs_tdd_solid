@@ -6,12 +6,10 @@ import CadastraUsuarioDto from './dto/cadastraUsuario.dto';
 
 @Injectable()
 export class UsuarioService {
-    constructor(
-        private readonly prisma: PrismaService,
-        private readonly hashService: HashService
-        ) {}
+    private prisma: PrismaService;
+    private hashService: HashService;
 
-    async cadastra(data): Promise<Usuario> {
+    async cadastra(data: CadastraUsuarioDto): Promise<Usuario> {
         try {
             const buscaUsuario = await this.prisma.usuario.findUnique({
                 where: {

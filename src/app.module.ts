@@ -7,10 +7,11 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import CepService from './services/cep.service';
 import HashService from './services/hash.service';
+import { PrismaService } from './services/prisma.service';
 
 @Module({
   imports: [UsuarioModule, PessoaModule, EnderecoModule],
   controllers: [AppController],
-  providers: [AppService, CepService, HashService],
+  providers: [AppService, PrismaService, CepService, HashService],
 })
 export class AppModule {}
