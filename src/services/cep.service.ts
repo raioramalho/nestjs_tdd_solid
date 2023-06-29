@@ -3,7 +3,7 @@ import axios from 'axios';
 import { IEndereco } from 'src/types/endereco.type';
 
 @Injectable()
-export default class CepService {
+export class CepService {
   public async buscarCep(
     CEP: string,
     NUMERO: number,

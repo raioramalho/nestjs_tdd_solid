@@ -2,9 +2,9 @@ import { PrismaService } from 'src/services/prisma.service';
 import CadastraUsuarioDto from './dto/cadastraUsuario.dto';
 import { UsuarioController } from './usuario.controller';
 import { UsuarioService } from './usuario.service';
-import HashService from 'src/services/hash.service';
 import { Test, TestingModule } from '@nestjs/testing';
 import { PrismaClient } from '@prisma/client';
+import { HashService } from 'src/services/hash.service';
 
 describe('Bateria de testes relacionada ao UsuarioController', () => {
   new PrismaClient().usuario.deleteMany();
@@ -50,4 +50,5 @@ describe('Bateria de testes relacionada ao UsuarioController', () => {
   it('Deve buscar um usuario pelo CODUSU', async () => {});
 
   it('Deve buscar um usuario pelo EMAIL', async () => {});
+
 });

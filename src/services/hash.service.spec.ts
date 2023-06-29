@@ -1,4 +1,5 @@
-import HashService from './hash.service';
+import { HashService } from "./hash.service";
+
 
 describe('Testes para o HashService', () => {
   it('Deve gerar um novo hash a partir da senha', async () => {

@@ -1,5 +1,6 @@
-import CepService from './cep.service';
+
 import { IEndereco } from 'src/types/endereco.type';
+import { CepService } from './cep.service';
 
 describe('Testes para o CepService', () => {
   it('Deve buscar informações de um CEP existente a partir do CEP', async () => {
