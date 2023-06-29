@@ -8,9 +8,13 @@ import { Prisma, PrismaClient, Usuario } from '@prisma/client';
 import HashService from 'src/services/hash.service';
 import { PrismaService } from 'src/services/prisma.service';
 import CadastraUsuarioDto from './dto/cadastraUsuario.dto';
+import BuscarUsuarioDto from './dto/buscarUsuario.dto';
+import AtualizaUsuarioDto from './dto/atualizaUsuario.dto';
+import DeletarUsuarioDto from './dto/deletarUsuario.dto';
 
 @Injectable()
 export class UsuarioService {
+    
   constructor(
     private readonly prismaService: PrismaService,
     private readonly hashService: HashService,
@@ -64,4 +68,68 @@ export class UsuarioService {
         throw new HttpException(`${error?.message}`, HttpStatus.BAD_GATEWAY);
     }
   }
+
+  async buscar(data: BuscarUsuarioDto): Promise<Usuario> {
+    try {
+        
+        const usuario = await this.prismaService.usuario.findFirst({
+            where: {
+                EMAIL: data.EMAIL,
+                CODUSU: data.CODUSU,
+            }
+        });
+
+        if(!usuario) {
+            throw new HttpException('Nenhum usuário encontrado.', HttpStatus.NOT_FOUND);
+        }
+
+        return usuario;
+
+    } catch (error) {
+        throw new HttpException(`${error?.message}`, HttpStatus.BAD_GATEWAY);
+    }
+  }
+
+  async atualizar(data: AtualizaUsuarioDto): Promise<Usuario> {
+    try {
+        const buscarUsuario = await this.prismaService.usuario.findUnique({
+            where: data,
+        });
+
+        if(!buscarUsuario) {
+            throw new HttpException('Nenhum usuário encontrado.', HttpStatus.NOT_FOUND);
+        }
+
+        return buscarUsuario;
+
+    } catch (error) {
+        throw new HttpException(`${error?.message}`, HttpStatus.BAD_GATEWAY);
+    }
+  }
+
+  async deletar(data: DeletarUsuarioDto): Promise<Usuario> {
+    try {
+        const buscarUsuario = await this.prismaService.usuario.findUnique({
+            where: data,
+        });
+
+        if(!buscarUsuario) {
+            throw new HttpException('Nenhum usuário encontrado.', HttpStatus.NOT_FOUND);
+        }
+
+        const deletar = await this.prismaService.usuario.delete({
+            where: data,
+        });
+
+        if(!deletar) {
+            throw new HttpException('Erro ao deletar usuário.', HttpStatus.EXPECTATION_FAILED);
+        }
+
+        return deletar;
+
+    } catch (error) {
+        throw new HttpException(`${error?.message}`, HttpStatus.BAD_GATEWAY);
+    }
+  }
+
 }
