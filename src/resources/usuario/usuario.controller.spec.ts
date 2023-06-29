@@ -1,10 +1,10 @@
-import { PrismaService } from 'src/services/prisma.service';
-import CadastraUsuarioDto from './dto/cadastraUsuario.dto';
-import { UsuarioController } from './usuario.controller';
-import { UsuarioService } from './usuario.service';
-import { Test, TestingModule } from '@nestjs/testing';
-import { PrismaClient } from '@prisma/client';
-import { HashService } from 'src/services/hash.service';
+import { TestingModule, Test } from "@nestjs/testing";
+import { PrismaClient } from "@prisma/client";
+import { HashService } from "src/services/hash.service";
+import { PrismaService } from "src/services/prisma.service";
+import { UsuarioController } from "./usuario.controller";
+import { UsuarioService } from "./usuario.service";
+
 
 describe('Bateria de testes relacionada ao UsuarioController', () => {
   new PrismaClient().usuario.deleteMany();

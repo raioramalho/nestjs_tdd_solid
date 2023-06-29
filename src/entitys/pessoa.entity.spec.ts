@@ -1,4 +1,4 @@
-import Pessoa from './pessoa.entity';
+import Pessoa from "./pessoa.entity";
 
 describe('Testes para a classe de Pessoa', () => {
   it('Deve criar uma nova Pessoa', () => {
