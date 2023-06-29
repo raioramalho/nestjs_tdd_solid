@@ -1,4 +1,3 @@
-import { Test } from '@nestjs/testing';
 import { PrismaService } from './prisma.service';
 
 describe('Bateria de testes para o prisma', () => {
