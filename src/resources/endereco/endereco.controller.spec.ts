@@ -1,4 +1,4 @@
-import { EnderecoController } from "./endereco.controller";
+import { EnderecoController } from './endereco.controller';
 
 describe('AppController', () => {
   let enderecoController: EnderecoController;

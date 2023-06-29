@@ -4,7 +4,6 @@ import { UsuarioService } from './usuario.service';
 import { Module } from '@nestjs/common';
 import { HashService } from 'src/services/hash.service';
 
-
 @Module({
   imports: [],
   controllers: [UsuarioController],

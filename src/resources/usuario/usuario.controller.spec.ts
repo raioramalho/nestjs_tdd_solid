@@ -1,10 +1,9 @@
-import { TestingModule, Test } from "@nestjs/testing";
-import { PrismaClient } from "@prisma/client";
-import { HashService } from "src/services/hash.service";
-import { PrismaService } from "src/services/prisma.service";
-import { UsuarioController } from "./usuario.controller";
-import { UsuarioService } from "./usuario.service";
-
+import { TestingModule, Test } from '@nestjs/testing';
+import { PrismaClient } from '@prisma/client';
+import { HashService } from 'src/services/hash.service';
+import { PrismaService } from 'src/services/prisma.service';
+import { UsuarioController } from './usuario.controller';
+import { UsuarioService } from './usuario.service';
 
 describe('Bateria de testes relacionada ao UsuarioController', () => {
   new PrismaClient().usuario.deleteMany();
@@ -32,27 +31,19 @@ describe('Bateria de testes relacionada ao UsuarioController', () => {
   });
 
   it('Deve listar todos os usuarios', async () => {
-    
     const usuario = {
-      EMAIL: "ramalho.sit@gmail.com",
-      SENHA: "123senha"
-    }
+      EMAIL: 'ramalho.sit@gmail.com',
+      SENHA: '123senha',
+    };
 
     await usuarioController.cadastrar(usuario);
 
     const usuarios = await usuarioController.listar();
 
     expect(usuarios.length).toBe(2);
-
-
-  })
-
-  it('Deve buscar um usuario pelo CODUSU', async () => {
-
   });
 
-  it('Deve buscar um usuario pelo EMAIL', async () => {
-    
-  });
+  it('Deve buscar um usuario pelo CODUSU', async () => {});
 
+  it('Deve buscar um usuario pelo EMAIL', async () => {});
 });

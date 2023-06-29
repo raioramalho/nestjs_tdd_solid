@@ -1,4 +1,12 @@
-import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Put,
+} from '@nestjs/common';
 import { Usuario } from '@prisma/client';
 import { UsuarioService } from './usuario.service';
 import CadastraUsuarioDto from './dto/cadastraUsuario.dto';
@@ -20,7 +28,7 @@ export class UsuarioController {
     return this.usuarioService.listar();
   }
 
-  @Get("/")
+  @Get('/')
   buscar(@Param() data: BuscarUsuarioDto): Promise<Usuario> {
     return this.usuarioService.buscar(data);
   }
@@ -34,5 +42,4 @@ export class UsuarioController {
   deletar(@Param() data: DeletarUsuarioDto): Promise<Usuario> {
     return this.usuarioService.deletar(data);
   }
-
 }

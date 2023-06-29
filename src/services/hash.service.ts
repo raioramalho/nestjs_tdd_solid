@@ -11,7 +11,7 @@ export class HashService {
     return hash;
   }
 
-  public compararHash(VALUE: string, HASH: string) {
+  public compararHash(VALUE: string, HASH: string): boolean {
     return compareSync(VALUE, HASH);
   }
 }

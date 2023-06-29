@@ -1,6 +1,5 @@
-import Endereco from "./endereco.entity";
-import { IEndereco } from "./types/endereco.type";
-
+import Endereco from './endereco.entity';
+import { IEndereco } from './types/endereco.type';
 
 describe('Testes para a classe de Endereco', () => {
   it('Deve criar um novo Endereco', () => {
