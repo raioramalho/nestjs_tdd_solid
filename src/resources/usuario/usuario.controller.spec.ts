@@ -47,8 +47,12 @@ describe('Bateria de testes relacionada ao UsuarioController', () => {
 
   })
 
-  it('Deve buscar um usuario pelo CODUSU', async () => {});
+  it('Deve buscar um usuario pelo CODUSU', async () => {
 
-  it('Deve buscar um usuario pelo EMAIL', async () => {});
+  });
+
+  it('Deve buscar um usuario pelo EMAIL', async () => {
+    
+  });
 
 });
