@@ -1,10 +1,16 @@
-import { IsBoolean, IsEmail, IsNotEmpty, IsOptional, IsString } from "class-validator";
+import {
+  IsBoolean,
+  IsEmail,
+  IsNotEmpty,
+  IsOptional,
+  IsString,
+} from 'class-validator';
 
 export default class CadastraUsuarioDto {
-    @IsNotEmpty()
-    @IsEmail()
-    EMAIL: string;
-    @IsNotEmpty()
-    @IsString()
-    SENHA: string;
+  @IsNotEmpty()
+  @IsEmail()
+  EMAIL: string;
+  @IsNotEmpty()
+  @IsString()
+  SENHA: string;
 }

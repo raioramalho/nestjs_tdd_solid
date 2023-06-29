@@ -1,15 +1,53 @@
+import { PrismaService } from 'src/services/prisma.service';
 import CadastraUsuarioDto from './dto/cadastraUsuario.dto';
+import { UsuarioController } from './usuario.controller';
+import { UsuarioService } from './usuario.service';
+import HashService from 'src/services/hash.service';
+import { Test, TestingModule } from '@nestjs/testing';
+import { PrismaClient } from '@prisma/client';
 
 describe('Bateria de testes relacionada ao UsuarioController', () => {
+  new PrismaClient().usuario.deleteMany();
 
-  it('Deve cadastrar usuario', async () => {
+  let usuarioController: UsuarioController;
 
+  beforeEach(async () => {
+    const app: TestingModule = await Test.createTestingModule({
+      controllers: [UsuarioController],
+      providers: [UsuarioService, PrismaService, HashService],
+    }).compile();
 
-    const usuario: CadastraUsuarioDto = {
-      EMAIL: "alan.ramalho@thinklife.com.br",
+    usuarioController = app.get<UsuarioController>(UsuarioController);
+  });
+
+  it('Deve cadastrar um novo usuario', async () => {
+    const usuario = {
+      EMAIL: 'alan.ramalho@thinklife.com.br',
+      SENHA: '123senha',
+    };
+
+    const novoUsuario = await usuarioController.cadastrar(usuario);
+
+    expect(novoUsuario.EMAIL).toBe(usuario.EMAIL);
+  });
+
+  it('Deve listar todos os usuarios', async () => {
+    
+    const usuario = {
+      EMAIL: "ramalho.sit@gmail.com",
       SENHA: "123senha"
     }
 
+    await usuarioController.cadastrar(usuario);
 
-  });
+    const usuarios = await usuarioController.listar();
+
+    expect(usuarios.length).toBe(2);
+
+
+  })
+
+  it('Deve buscar um usuario pelo CODUSU', async () => {});
+
+  it('Deve buscar um usuario pelo EMAIL', async () => {});
 });

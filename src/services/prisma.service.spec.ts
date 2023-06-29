@@ -6,5 +6,4 @@ describe('Bateria de testes para o prisma', () => {
     const prisma = new PrismaService();
     expect(prisma).toBeDefined();
   });
-
 });

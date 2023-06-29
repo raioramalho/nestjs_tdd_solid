@@ -1,4 +1,4 @@
 import { Controller } from '@nestjs/common';
 
-@Controller("endereco")
+@Controller('endereco')
 export class EnderecoController {}

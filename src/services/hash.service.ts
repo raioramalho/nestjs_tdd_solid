@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { compareSync, hashSync } from 'bcryptjs';
 
-
 @Injectable()
 export default class HashService {
   private clearText: string;

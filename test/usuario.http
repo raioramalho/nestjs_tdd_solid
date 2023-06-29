@@ -1,0 +1,12 @@
+### POST em /usuario
+POST http://localhost:3000/usuario
+Content-Type: application/json
+
+{
+    "EMAIL": "alan.ramalho@thinklife.com.br",
+    "SENHA": "123senha"
+}
+
+### GET em /usuario
+GET http://localhost:3000/usuario
+Content-Type: application/json
