@@ -34,7 +34,7 @@ export class UsuarioService {
             return cadastraUsuario;
 
         } catch (error) {
-            throw new HttpException(`${error?.message}`, HttpStatus.BAD_GATEWAY);
+            // throw new HttpException(`${error?.message}`, HttpStatus.BAD_GATEWAY);
         }
     }
 }
