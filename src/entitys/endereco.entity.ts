@@ -1,4 +1,4 @@
-import { IEndereco } from 'src/types/endereco.type';
+import { IEndereco } from 'src/entitys/types/endereco.type';
 
 export default class Endereco {
   private CODEND: number;
