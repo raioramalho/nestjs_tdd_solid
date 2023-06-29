@@ -10,3 +10,27 @@ Content-Type: application/json
 ### GET em /usuario
 GET http://localhost:3000/usuario
 Content-Type: application/json
+
+
+### GET em /usuario/?EMAIL=
+GET http://localhost:3000/usuario/?EMAIL=alan.ramalho@thinklife.com.br
+Content-Type: application/json
+
+
+### GET em /usuario/?CODUSU=
+GET http://localhost:3000/usuario/?CODUSU=1
+Content-Type: application/json
+
+
+### PUT em /usuario/?CODUSU=
+PUT http://localhost:3000/usuario/?CODUSU=1
+Content-Type: application/json
+
+{
+    "EMAIL": "alan.ramalho@thinklife.com.br",
+    "SENHA": "123senha"
+}
+
+### DELETE em /usuario/?CODUSU=
+DELETE http://localhost:3000/usuario/?CODUSU=1
+Content-Type: application/json
