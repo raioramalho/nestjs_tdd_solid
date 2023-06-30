@@ -1,8 +1,8 @@
 {
-  "name": "desafio_andrade_nestjs",
+  "name": "nestjs_tdd_solid",
   "version": "0.0.1",
   "description": "",
-  "author": "",
+  "author": "Alan Ramalho",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
