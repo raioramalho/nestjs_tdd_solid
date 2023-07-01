@@ -1,4 +1,4 @@
-import { IEndereco } from 'src/entitys/types/endereco.type';
+import { IEndereco } from 'src/resources/endereco/dto/endereco.type';
 import { CepService } from './cep.service';
 
 describe('Testes para o CepService', () => {
