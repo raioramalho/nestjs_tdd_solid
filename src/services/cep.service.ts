@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import axios from 'axios';
-import { IEndereco } from 'src/resources/endereco/dto/endereco.type';
+import { IEndereco } from 'src/modules/endereco/entity/endereco.entity';
 
 @Injectable()
 export class CepService {
