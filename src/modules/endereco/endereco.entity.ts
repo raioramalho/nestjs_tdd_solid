@@ -1,4 +1,4 @@
-import { IEndereco } from 'src/modules/endereco/entity/endereco.entity';
+import { IEndereco } from 'src/modules/endereco/entity/endereco.interface';
 
 export default class Endereco {
   private CODEND: number;

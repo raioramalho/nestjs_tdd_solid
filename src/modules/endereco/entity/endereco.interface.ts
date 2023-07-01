@@ -1,4 +1,4 @@
-export type IEndereco = {
+export interface IEndereco {
   CODEND?: number;
   CEP: string;
   ENDERECO?: string;
@@ -7,4 +7,4 @@ export type IEndereco = {
   UF?: string;
   ESTADO?: string;
   COMPLEMENTO: string;
-};
+}
